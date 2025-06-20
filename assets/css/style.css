@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+
+:root {
+  --primary-color: #1a102c;
+  --secondary-color: #0b0b0b;
+  --main-bg-color: #f0f0f0;
+  --primary-text-color: #f7a21a;
+  --secondary-text-color: #00f0ff;
+  --border-color: #39ff14;
+  --details-color: #f7c948;
+  --light-color: #fff;
+
+  --default-font: Arial, Helvetica, sans-serif;
+  --primary-font: "Press Start 2P", system-ui;
+  --secondary-font: "Mouse Memoirs", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: var(--default-font);
+  background: var(--main-bg-color);
+}
+
+header {
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: var(--light-color);
+  border-bottom: 2px solid var(--details-color);
+}
+
+.area-logo {
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--details-color),
+    var(--border-color)
+  );
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.area-logo img {
+  width: 100px;
+}
+
+.area-menu {
+  font-size: 1.5rem;
+}
+
+.area-menu ul {
+  display: flex;
+  gap: 20px;
+}
+.area-menu li {
+  list-style: none;
+}
+.area-menu a {
+  color: var(--secondary-text-color);
+  font-family: var(--primary-font);
+  text-decoration: none;
+  transition: all 0.5s ease;
+  padding: 8px 0;
+}
+.area-menu a:hover {
+  border-bottom: 2px solid var(--secondary-text-color);
+  filter: contrast(110%);
+}
+
+main {
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--light-color);
+  font-family: var(--primary-font);
+}
+
+/* Section hero */
+.hero {
+  padding: 50px 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--primary-color) 0px,
+    var(--secondary-color) 5px,
+    var(--primary-color) 10px
+  );
+
+  animation-name: vhs;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+.hero a {
+  max-width: 400px;
+  display: block;
+  text-decoration: none;
+  color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.hero a:hover {
+  transform: scale(1.05);
+  filter: contrast(110%);
+}
+
+/* Section catálogo */
+
+.area-catalogo {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.area-catalogo h2 {
+  font-size: 2.5rem;
+  color: var(--details-color);
+  font-family: var(--secondary-font);
+  margin-bottom: 20px;
+}
+
+.catalogo-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.catalogo-item {
+  width: 320px;
+  cursor: pointer;
+}
+.catalogo-item img {
+  width: 320px;
+  border: 2px solid var(--details-color);
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.catalogo-item img:hover {
+  transform: scale(1.05);
+  filter: contrast(110%);
+}
+
+.hide-mobile {
+  display: none;
+}
+
+/* Section contato */
+
+.area-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.area-contato h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 14px;
+  font-family: var(--secondary-font);
+  color: var(--details-color);
+}
+
+.area-social-media {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.area-social-media a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+.area-social-media a:hover {
+  transform: scale(1.09);
+}
+
+footer {
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 40px;
+  color: var(--light-color);
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Área dos @Keyframes & @Mediaquerys */
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .area-logo {
+    margin-bottom: 0;
+  }
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .area-catalogo h2 {
+    font-size: 4rem;
+  }
+
+  .catalogo-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .area-menu {
+    font-size: 2rem;
+  }
+
+  .catalogo-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+}
+
+@keyframes vhs {
+  0% {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--primary-color) 0px,
+      var(--secondary-color) 5px,
+      var(--primary-color) 10px
+    );
+  }
+  50% {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--secondary-color) 0px,
+      var(--primary-color) 5px,
+      var(--secondary-color) 10px
+    );
+  }
+  100% {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--primary-color) 0px,
+      var(--secondary-color) 5px,
+      var(--primary-color) 10px
+    );
+  }
+}
