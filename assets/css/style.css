@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
 
 :root {
+  --blur-color: rgba(26, 26, 26, 0.466);
   --primary-color: #1a102c;
   --secondary-color: #0b0b0b;
   --main-bg-color: #f0f0f0;
@@ -160,8 +161,12 @@ main {
 
 .catalogo-item {
   width: 320px;
+  height: 250px; /* adicionado para testes */
   cursor: pointer;
+  position: relative; /* adicionado para testes */
+  transition: all .5s ease;
 }
+
 .catalogo-item img {
   width: 320px;
   border: 2px solid var(--details-color);
@@ -169,10 +174,41 @@ main {
   transition: all 0.5s ease;
 }
 
-.catalogo-item img:hover {
-  transform: scale(1.05);
-  filter: contrast(110%);
+ /* adicionado para testes */
+.catalogo-item .info {
+  width: 100%;
+  height: inherit;
+  background: var(--blur-color);
+  border: 2px solid var(--details-color);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all .5s ease;
+  backdrop-filter: blur(2px);
 }
+
+.catalogo-item .info h3 {
+  font-family: var(--secondary-font);
+}
+
+.catalogo-item .info:hover {
+  opacity: 1;
+
+}
+.catalogo-item:hover {
+  transform: scale(1.05);
+
+}
+
+/* Fim do adicionado para testes */
 
 .hide-mobile {
   display: none;
